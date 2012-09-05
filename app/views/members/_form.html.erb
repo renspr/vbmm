@@ -1,0 +1,10 @@
+<%= simple_form_for @member, :html => {:class => 'form-horizontal' } do |f| %>
+
+  <%= f.input :name, label: 'Name im Forum', hint: 'Muss exakt mit dem Namen im diavelforum.de übereinstimmen.' %>
+  <%= f.input :location_string, label: 'Deine Anschrift', hint: 'Du kannst hier z.B. Deine genaue Anschrift mit Straße und Hausnummer angeben. Es reicht aber auch z.B. nur den Name der Stadt oder eine PLZ anzugeben. Die Angabe wird von Google Maps in Koordinaten umgerechnet. Beispiel: Musterweg 23, 12345 Musterstadt, Deutschland oder Zurüch, Schweiz' %>
+
+  <div class="form-actions">
+    <%= f.submit value: 'Jetzt eintragen', class: 'btn btn-success' %>
+  </div>
+
+<% end %>

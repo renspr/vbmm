@@ -1,0 +1,41 @@
+<div id="map"></div>
+
+<% content_for :head do %>
+
+  <script type="text/javascript">
+    jQuery(function($) {
+      var members    = JSON.parse('<%= raw @members.to_json %>');
+      var mapOptions = {
+        zoom: 6,
+        center: new google.maps.LatLng(52.05249, 9.492188),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+
+      var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+      for (var i = 0; i < members.length; i++) {
+        var m = members[i];
+
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(m.latitude, m.longitude),
+          map: map,
+          title: m.name
+        });
+
+        attachInfoWindow(marker, '<img src="http://www.diavelforum.de/avatars/'+m.name+'.gif?dateline=1332319440&type=thumb" style="float: left; margin-right: 10px"/><h4>'+m.name+'</h4><a href="http://www.diavelforum.de/members/'+m.name+'.html">&raquo; zum Diavelforum.de</a>');
+      }
+
+      function attachInfoWindow(marker, content) {
+        var infowindow = new google.maps.InfoWindow({
+          content: content,
+          size: new google.maps.Size(50, 50)
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.open(map, marker);
+        });
+      }
+    });
+  </script>
+
+<% end %>

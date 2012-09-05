@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DiavelforumMemberMap</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+  <%= csrf_meta_tags %>
+  <%= yield :head %>
+</head>
+<body>
+
+  <div class="navbar navbar-static-top navbar-inverse">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Diavelforum.de | Memberkarte</a>
+      <ul class="nav">
+        <li>
+          <%= link_to new_member_path do %>
+            <i class="icon icon-plus icon-white"></i>
+            Neu eintragen
+          <% end %>
+        </li>
+      </ul>
+      <ul class="nav pull-right">
+        <li><a href="http://diavelforum.de">&raquo; Zum Diavelforum</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <%= yield %>
+</body>
+</html>
