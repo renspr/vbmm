@@ -6,6 +6,7 @@ gem 'thin',        '~> 1.4.1'
 gem 'geocoder'
 gem 'pg'
 gem 'jquery-rails'
+gem 'rails-i18n'
 
 
 group :assets do
