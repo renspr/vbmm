@@ -1,20 +1,34 @@
+# coding: utf-8
+
+require 'net/http'
+require 'net/https'
+
 class MembersController < ApplicationController
 
-  def index
-    @members = Member.all
+  before_filter :authenticate_member!
+
+  def edit
+    @member = current_member
   end
 
-  def new
-    @member = Member.new
-  end
-
-  def create
-    @member = Member.new(params[:member])
-    if @member.save
-      redirect_to members_path
+  def update
+    @member = current_member
+    if @member.update_attributes(params[:member])
+      redirect_to root_path
     else
-      render :new
+      render :edit
     end
+  end
+
+  def destroy
+    @member = current_member
+    if @member.destroy && session[:member_id] = nil
+      flash[:success] = "Konto gelöscht. Auf wiedersehen."
+    else
+      flash[:error] = "Konto konnte nicht gelöscht werden. Es ist ein Fehler aufgetreten."
+    end
+
+    redirect_to root_path
   end
 
 end

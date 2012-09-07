@@ -1,0 +1,21 @@
+<%= form_tag sessions_path, class: 'simple_form form-horizontal' do %>
+
+  <div class="control-group string required">
+    <%= label_tag :email, 'Name im Forum', class: 'string required control-label' %>
+    <div class="controls">
+      <input class="string required" name="name" size="50" type="text">
+    </div>
+  </div>
+
+  <div class="control-group string required">
+    <%= label_tag :password, 'Passwort', class: 'string required control-label' %>
+    <div class="controls">
+      <input class="string required" name="password" size="50" type="password">
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <input class="btn btn-success" name="commit" type="submit" value="Anmelden">
+  </div>
+
+<% end %>

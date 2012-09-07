@@ -1,7 +1,11 @@
 DiavelforumMemberMap::Application.routes.draw do
 
-  resources :members
+  resource  :member,   only: [:edit, :update]
+  delete    :member,   to: 'members#destroy'
 
-  root to: redirect('/members')
+  resources :sessions, only: [:new, :create]
+  delete    :session,  to: 'sessions#destroy'
+
+  root to: 'application#map'
 
 end

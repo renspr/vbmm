@@ -12,21 +12,50 @@
 
   <div class="navbar navbar-static-top navbar-inverse">
     <div class="navbar-inner">
-      <a class="brand" href="#">Diavelforum.de | Memberkarte</a>
+      <%= link_to 'Diavelforum.de | Memberkarte', root_path, class: 'brand' %>
       <ul class="nav">
         <li>
-          <%= link_to new_member_path do %>
-            <i class="icon icon-plus icon-white"></i>
-            Neu eintragen
+          <% if current_member? && current_member.location_string.present? %>
+            <%= link_to edit_member_path do %>
+              <i class="icon icon-pencil icon-white"></i>
+              Eintrag aktualisieren
+            <% end %>
+          <% else %>
+            <%= link_to edit_member_path do %>
+              <i class="icon icon-plus icon-white"></i>
+              Neu eintragen
+            <% end %>
           <% end %>
         </li>
       </ul>
       <ul class="nav pull-right">
-        <li><a href="http://diavelforum.de">&raquo; Zum Diavelforum</a></li>
+        <% if current_member? %>
+          <li>
+            <%= link_to session_path, method: :delete do %>
+              <i class="icon icon-off icon-white"></i>
+              Abmelden (<%= current_member.name %>)
+            <% end %>
+          </li>
+        <% else %>
+          <li><%= link_to 'Anmelden', new_session_path %></li>
+        <% end %>
       </ul>
     </div>
   </div>
 
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <%= render 'alerts' %>
+      </div>
+    </div>
+  </div>
+
   <%= yield %>
+
+  <footer>
+    Entwickelt und zur Verfügung gestellt für Mitglieder des <%= link_to 'Diavel Forums', 'http://www.diavelforum.de' %>
+    von <%= link_to 'René Sprotte', 'http://metaminded.com' %>
+  </footer>
 </body>
 </html>

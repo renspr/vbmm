@@ -1,0 +1,7 @@
+<% flash.each do |type, message| %>
+  <%= content_tag :div, :class => flash_message_class(type) do %>
+    <%= message %>
+    <%= content_tag :a, 'x', :class => 'close', 'data-dismiss' => 'alert' %>
+  <% end %>
+<% end %>
+<% flash.clear %>

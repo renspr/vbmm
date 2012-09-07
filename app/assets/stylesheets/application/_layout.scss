@@ -6,4 +6,32 @@ html, body {
 
 .navbar {
   margin-bottom: $baseLineHeight * 2;
+
+  &.navbar-fixed-bottom {
+    margin-bottom: 0;
+  }
+}
+
+.alert {
+  text-align: center;
+}
+
+footer {
+  color: $gray;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  line-height: $footerHeight;
+  padding: 0 10px;
+  background-color: #000;
+  text-align: right;
+  font-size: 90%;
+  a {
+    color: inherit;
+    text-decoration: underline;
+    &:hover {
+      color: $grayLighter;
+    }
+  }
 }
