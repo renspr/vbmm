@@ -6,8 +6,8 @@
     jQuery(function($) {
       var members    = JSON.parse('<%= raw @members.to_json %>');
       var mapOptions = {
-        zoom: 6,
-        center: new google.maps.LatLng(49.167339, 9.645996),
+        zoom: <%= Setting['map.default_zoom'] -%>,
+        center: new google.maps.LatLng(<%= Setting['map.default_lat'] -%>, <%= Setting['map.default_lng'] -%>),
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
 
@@ -22,7 +22,9 @@
           title: m.name
         });
 
-        attachInfoWindow(marker, '<img src="http://www.diavelforum.de/avatars/'+m.name+'.gif?dateline=1332319440&type=thumb" style="float: left; margin-right: 10px"/><h4>'+m.name+'</h4><a href="http://www.diavelforum.de/members/'+m.name+'.html">&raquo; zum Diavelforum.de</a>');
+        var baseUrl = "<%= Setting['forum_url'] -%>";
+
+        attachInfoWindow(marker, '<img src="'+baseUrl+'/avatars/'+m.name+'.gif?dateline='+(new Date().getTime())+'&type=thumb" style="float: left; margin-right: 10px"/><h4>'+m.name+'</h4><a href="http://www.diavelforum.de/members/'+m.name+'.html">&raquo; zum Forum</a>');
       }
 
       function attachInfoWindow(marker, content) {

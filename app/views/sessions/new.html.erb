@@ -5,7 +5,8 @@
 
       <div class="alert alert-info">
         Melde Dich mit den gleichen Zugangsdaten (Name und Passwort) an, die Du auch für
-        <%= link_to 'diavel-forum.de', 'http://www.diavelforum.de' %> verwendest.
+        <%= link_to Setting['forum_name'], Setting['forum_url'] %> verwendest. Die Anmeldung
+        wird an das Forum weitergereicht, es werden keine Login-Daten gespeichert.
       </div>
 
       <%= render 'form' %>

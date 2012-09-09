@@ -1,8 +1,5 @@
 # coding: utf-8
 
-require 'net/http'
-require 'net/https'
-
 class MembersController < ApplicationController
 
   before_filter :authenticate_member!

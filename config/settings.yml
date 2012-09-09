@@ -1,0 +1,15 @@
+# encoding: utf-8
+
+default:
+  session_key: '_diavelforum_de_mm_session'
+
+  forum_name: Diavelforum.de
+  forum_url: http://diavelforum.de
+
+  vbulletin:
+    base_url: http://diavelforum.de
+
+  map:
+    default_lat: 49.167339
+    default_lng: 9.645996
+    default_zoom: 6

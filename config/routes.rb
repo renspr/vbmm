@@ -1,4 +1,4 @@
-DiavelforumMemberMap::Application.routes.draw do
+VBMM::Application.routes.draw do
 
   resource  :member,   only: [:edit, :update]
   delete    :member,   to: 'members#destroy'

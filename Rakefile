@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-DiavelforumMemberMap::Application.load_tasks
+VBMM::Application.load_tasks

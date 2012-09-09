@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    response = post_url('http://diavelforum.de/login.php?do=login', {
+    response = post_url("#{Setting['vbulletin.base_url']}/login.php?do=login", {
       'do'                => 'login',
       'securitytoken'     => 'guest',
       'vb_login_username' => params[:name],
