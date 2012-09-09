@@ -14,6 +14,10 @@ VBMM ist eine Ruby on Rails Anwendung. Wie man am Besten Ruby on Rails
 Anwendungen installiert kann in zahlreichen Büchern und Online
 nachgelesen werden.
 
+Vor dem ersten Start ist die Datei config/settings.yml anzupassen. VBMM
+wurde ursprünglich für http://diavelforum.de entwickelt. Daher finden
+sich in config/settings.yml entsprechende Verweise, die geändert werden müssen.
+
 == Lizenz
 
 Copyright © 2012 René Sprotte
