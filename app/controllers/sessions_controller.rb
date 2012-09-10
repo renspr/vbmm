@@ -1,9 +1,16 @@
+# coding: utf-8
+
 class SessionsController < ApplicationController
 
   def new
   end
 
   def create
+    if Setting['sessions.force_confirmation'] && params[:confirm].blank?
+      flash[:error] = "Bitte bestätige die Hinweise zum Datenschutz"
+      return redirect_to new_session_path
+    end
+
     response = post_url("#{Setting['vbulletin.base_url']}/login.php?do=login", {
       'do'                => 'login',
       'securitytoken'     => 'guest',

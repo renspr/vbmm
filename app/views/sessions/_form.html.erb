@@ -14,6 +14,17 @@
     </div>
   </div>
 
+  <% if Setting['sessions.force_confirmation'] %>
+    <div class="control-group boolean required">
+      <div class="controls">
+        <label class="checkbox">
+          <input type="checkbox" name="confirm">
+          <%= Setting['sessions.confirmation_text'].html_safe %>
+        </label>
+      </div>
+    </div>
+  <% end %>
+
   <div class="form-actions">
     <input class="btn btn-success" name="commit" type="submit" value="Anmelden">
   </div>

@@ -6,6 +6,13 @@ default:
   forum_name: Diavelforum.de
   forum_url: http://diavelforum.de
 
+  sessions:
+    force_confirmation: true
+    confirmation_text: >
+      Mir ist bewusst, dass diese Mitgliederkarte ein unabhängiges Projekt ist und meine
+      eingegeben Daten nicht im diavelforum.de sondern in einem eigenständigen System
+      gespeichert werden. Ich habe die <a href="/privacy">Hinweise zum Datenschutz</a> gelesen.
+
   vbulletin:
     base_url: http://diavelforum.de
 
@@ -16,5 +23,8 @@ default:
 
   static_pages:
     legal_info:
+      content: >
+        Bla bla <strong>foo bar</strong>
+    privacy:
       content: >
         Bla bla <strong>foo bar</strong>
