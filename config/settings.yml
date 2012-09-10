@@ -13,3 +13,8 @@ default:
     default_lat: 49.167339
     default_lng: 9.645996
     default_zoom: 6
+
+  static_pages:
+    legal_info:
+      content: >
+        Bla bla <strong>foo bar</strong>
