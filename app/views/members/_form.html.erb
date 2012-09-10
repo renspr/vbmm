@@ -4,7 +4,7 @@
     <span class="input-large uneditable-input"><%= @member.name %></span>
   <% end %>
 
-  <%= f.input :location_string, label: 'Deine Anschrift', hint: 'Du kannst hier z.B. Deine genaue Anschrift mit Straße und Hausnummer angeben. Es reicht aber auch z.B. nur den Name der Stadt anzugeben. Die Angabe wird von Google Maps in Koordinaten umgerechnet. Beispiel: Musterweg 23, 12345 Musterstadt, Deutschland oder Zurüch, Schweiz', as: :boolean %>
+  <%= f.input :location_string, label: 'Deine Anschrift', hint: 'Du kannst hier z.B. Deine genaue Anschrift mit Straße und Hausnummer angeben. Es reicht aber auch z.B. nur den Name der Stadt anzugeben. Die Angabe wird von Google Maps in Koordinaten umgerechnet. Beispiel: Musterweg 23, 12345 Musterstadt, Deutschland oder Zurüch, Schweiz' %>
 
   <div class="form-actions">
     <%= f.submit value: 'Speichern', class: 'btn btn-success' %>
