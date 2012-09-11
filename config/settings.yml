@@ -24,7 +24,50 @@ default:
   static_pages:
     legal_info:
       content: >
-        Bla bla <strong>foo bar</strong>
+        <h1>Impressum</h1>
+        <h3 class="section">Angaben gemäß § 5 TMG</h3>
+        <p>
+          René Sprotte<br/>
+          Rhederweg 13<br/>
+          33100 Paderborn<br/>
+        </p>
+        <h3 class="section">Kontakt</h3>
+        <p>
+          Telefon: 0151-22333829<br/>
+          E-Mail: rene@me.com<br/>
+        </p>
+
     privacy:
       content: >
-        Bla bla <strong>foo bar</strong>
+        <h1>Hinweise zum Datenschutz</h1>
+        <p>
+          <strong>
+            Durch die Nutzung dieser Webseiten unter dfmm.herokuapp.com erklären Sie sich mit folgendem Vorgehen
+            bezüglich der nachbenannten Daten einverstanden:
+          </strong>
+        </p>
+        <h3>Datenspeicherung</h3>
+        <ol>
+          <li>Die Datenspeicherung erfolgt beim US Cloud Anbieter <a href="http://heroku.com">heroku.com</a></li>
+          <li>
+            Es werden folgende Daten gespeichert
+            <ol>
+              <li>Forumsname</li>
+              <li>Eine frei wählbare Adressangabe für die Positionierung auf der Karte</li>
+              <li>Geokoordinaten, die der o.g. Adressangabe entsprechen</li>
+            </ol>
+          </li>
+        </ol>
+        <h3>Login</h3>
+        <p>
+          Für einen Eintrag auf der Karte ist eine Anmeldung erforderlich.
+        </p>
+        <p>
+          Um sicherstellen zu können, dass nur Mitglieder von diavelforum.de sich auf der Karte eintragen, ist ein Login
+          mit den Anmeldedaten (Name und Passwort) des Forums erforderlich.
+        </p>
+        <p>
+          Dazu müssen diese Daten auf dieser Webseite eingeben werden. Es wird ausdrücklich darauf hingewiesen, dass
+          die Anmeldedaten ausschließlich für eine Überprüfung an das Forum diavelform.de gesendet werden und insbesondere
+          das Passwort nicht gespeichert, oder in sonst irgendeiner weise verarbeitet wird.
+        </p>
