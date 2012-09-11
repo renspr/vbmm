@@ -51,11 +51,11 @@ default:
           <li>Die Datenspeicherung erfolgt beim US Cloud Anbieter <a href="http://heroku.com">heroku.com</a></li>
           <li>
             Es werden folgende Daten gespeichert
-            <ol>
+            <ul>
               <li>Forumsname</li>
               <li>Eine frei wählbare Adressangabe für die Positionierung auf der Karte</li>
               <li>Geokoordinaten, die der o.g. Adressangabe entsprechen</li>
-            </ol>
+            </ul>
           </li>
         </ol>
         <h3>Login</h3>
