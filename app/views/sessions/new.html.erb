@@ -6,7 +6,8 @@
       <div class="alert alert-info">
         Melde Dich mit den gleichen Zugangsdaten (Name und Passwort) an, die Du auch für
         <%= link_to Setting['forum_name'], Setting['forum_url'] %> verwendest. Die Anmeldung
-        wird an das Forum weitergereicht, dein Passwort wird hier nicht gespeichert.
+        wird zum Zweck der Überprpfung, dass sich nur Mitglieder von <%= Setting['forum_name'] %> auf der Karte
+        eintragen an das Forum weitergereicht. Dein Passwort wird hier nicht gespeichert.
       </div>
 
       <%= render 'alerts' %>
