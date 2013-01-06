@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
       'vb_login_password' => params[:password]
     })
 
-    if response && response['set-cookie']['vbseo_loggedin=yes'].present?
+    if response && response.body.match(/<form.+action=".+forum\.php\?s=[a-f0-9]+"/)
       session[:member_id] = create_or_update_member(params[:name])
       redirect_to root_url, notice: "Erfolgreich angemeldet"
     else
