@@ -7,6 +7,7 @@ gem 'geocoder'
 gem 'pg'
 gem 'jquery-rails'
 gem 'rails-i18n'
+gem 'newrelic_rpm'
 
 
 group :assets do

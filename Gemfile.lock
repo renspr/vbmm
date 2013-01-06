@@ -77,6 +77,7 @@ GEM
     method_source (0.8.1)
     mime-types (1.19)
     multi_json (1.5.0)
+    newrelic_rpm (3.5.4.33)
     pg (0.14.0)
     polyglot (0.3.3)
     pry (0.9.10)
@@ -152,6 +153,7 @@ DEPENDENCIES
   compass-rails (~> 1.0.3)
   geocoder
   jquery-rails
+  newrelic_rpm
   pg
   pry-debugger (~> 0.2.0)
   pry-rails (~> 0.2.2)
