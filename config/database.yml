@@ -2,6 +2,6 @@ development:
   adapter: postgresql
   encoding: unicode
   database: dfmm
-  username: renspr
+  host: localhost
   pool: 5
   timeout: 5000
