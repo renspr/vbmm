@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails',       '~> 3.2.10'
+gem 'rails',       '~> 3.2.11'
 gem 'simple_form', '~> 2.0.1'
 gem 'thin',        '~> 1.4.1'
 gem 'geocoder'
