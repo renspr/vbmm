@@ -32,7 +32,7 @@
       <ul class="nav pull-right">
         <% if current_member? %>
           <li>
-            <%= link_to session_path, method: :delete do %>
+            <%= link_to session_path, method: :delete, confirm: 'Wirklich abmelden?' do %>
               <i class="icon icon-off icon-white"></i>
               Abmelden (<%= current_member.name %>)
             <% end %>

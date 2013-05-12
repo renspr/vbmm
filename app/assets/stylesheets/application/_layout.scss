@@ -16,6 +16,10 @@ html, body {
   text-align: center;
 }
 
+.block {
+  margin-bottom: $baseLineHeight;
+}
+
 footer {
   color: $gray;
   position: absolute;
