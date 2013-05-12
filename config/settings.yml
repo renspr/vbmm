@@ -4,7 +4,7 @@ default:
   session_key: '_diavelforum_de_mm_session'
 
   forum_name: Diavelforum.de
-  forum_url: http://diavelforum.de
+  forum_url: http://www.diavelforum.de
 
   sessions:
     force_confirmation: true
@@ -14,7 +14,7 @@ default:
       gespeichert werden. Ich habe die <a href="/privacy">Hinweise zum Datenschutz</a> gelesen.
 
   vbulletin:
-    base_url: http://diavelforum.de
+    base_url: http://www.diavelforum.de
 
   map:
     default_lat: 49.167339

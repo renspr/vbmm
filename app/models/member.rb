@@ -6,7 +6,7 @@ class Member < ActiveRecord::Base
 
   # attributes whitelist
   attr_accessible :location_string
-  attr_accessible :name, :location_string, as: :admin
+  attr_accessible :name, :location_string, :vb_id, as: :admin
 
   # geocoding
   geocoded_by :location_string # can also be an IP address

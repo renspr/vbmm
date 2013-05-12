@@ -19,12 +19,22 @@
         var marker = new google.maps.Marker({
           position: new google.maps.LatLng(m.latitude, m.longitude),
           map: map,
+          flat: true,
           title: m.name
         });
 
+        currentMemberVbId = "<%= current_member.vb_id %>"
+        if (currentMemberVbId && currentMemberVbId == m.vb_id) {
+          marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
+        }
+
         var baseUrl = "<%= Setting['forum_url'] -%>";
 
-        attachInfoWindow(marker, '<img src="'+baseUrl+'/avatars/'+m.name+'.gif?dateline='+(new Date().getTime())+'&type=thumb" style="float: left; margin-right: 10px"/><h4>'+m.name+'</h4><a href="http://www.diavelforum.de/members/'+m.name+'.html">&raquo; zum Forum</a>');
+        if (m.vb_id) {
+          attachInfoWindow(marker, '<img src="'+baseUrl+'/image.php?u='+m.vb_id+'&dateline='+(new Date().getTime())+'&type=profile" style="float: left; margin-right: 10px"/><h4>'+m.name+'</h4><a href="'+baseUrl+'/member.php?u='+m.vb_id+'">&raquo; zum Forum</a>');
+        } else {
+          attachInfoWindow(marker, '<h4>'+m.name+'</h4>');
+        }
       }
 
       function attachInfoWindow(marker, content) {

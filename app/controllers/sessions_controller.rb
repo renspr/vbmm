@@ -17,8 +17,11 @@ class SessionsController < ApplicationController
       'vb_login_password' => params[:password]
     })
 
-    if response && response.body.match(/<form.+action=".+forum\.php\?s=[a-f0-9]+"/)
-      session[:member_id] = create_or_update_member(params[:name])
+    logged_in = (response.try(:body) || "").match(/<form.+action=".+forum\.php\?s=[a-f0-9]+"/)
+    vb_id     = (response.try(:body) || "").match(/LOGGEDIN\s*=\s*(\d+)/i)[1]
+
+    if logged_in && vb_id
+      session[:member_id] = create_or_update_member(vb_id, params[:name])
       redirect_to root_url
     else
       flash.now[:error] = "Name oder Passwort ist falsch."
@@ -33,11 +36,12 @@ class SessionsController < ApplicationController
 
 private
 
-  def create_or_update_member(name)
+  def create_or_update_member(vb_id, name)
     if member = Member.find_by_name(name.try(:strip).try(:downcase))
+      member.update_attributes!({vb_id: vb_id}, as: :admin)
       member
     else
-      Member.create!({name: name}, as: :admin)
+      Member.create!({name: name, vb_id: vb_id}, as: :admin)
     end
   end
 
