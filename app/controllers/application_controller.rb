@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def map
+    authenticate_member!
     @members = Member.all
   end
 
