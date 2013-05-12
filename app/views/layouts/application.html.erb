@@ -14,33 +14,27 @@
   <div class="navbar navbar-static-top navbar-inverse">
     <div class="navbar-inner">
       <%= link_to "#{Setting['forum_name']} | Memberkarte", root_path, class: 'brand' %>
-      <ul class="nav">
-        <li>
-          <% if current_member? && current_member.location_string.present? %>
-            <%= link_to edit_member_path do %>
-              <i class="icon icon-pencil icon-white"></i>
-              Eintrag aktualisieren
-            <% end %>
-          <% else %>
-            <%= link_to edit_member_path do %>
-              <i class="icon icon-plus icon-white"></i>
-              Neu eintragen
-            <% end %>
-          <% end %>
-        </li>
-      </ul>
-      <ul class="nav pull-right">
-        <% if current_member? %>
-          <li>
-            <%= link_to session_path, method: :delete, confirm: 'Wirklich abmelden?' do %>
-              <i class="icon icon-off icon-white"></i>
-              Abmelden (<%= current_member.name %>)
-            <% end %>
-          </li>
-        <% else %>
-          <li><%= link_to 'Anmelden', new_session_path %></li>
+
+      <% if current_member? && current_member.location_string.present? %>
+        <%= link_to edit_member_path, class: 'btn btn-success' do %>
+          <i class="icon icon-pencil icon-white"></i>
+          Eintrag aktualisieren
         <% end %>
-      </ul>
+      <% else %>
+        <%= link_to edit_member_path, class: 'btn btn-success' do %>
+          <i class="icon icon-plus icon-white"></i>
+          Neu eintragen
+        <% end %>
+      <% end %>
+
+      <div class="pull-right">
+        <% if current_member? %>
+          <%= link_to session_path, method: :delete, confirm: 'Wirklich abmelden?', class: 'btn btn-danger' do %>
+            <i class="icon icon-off icon-white"></i>
+            Abmelden (<%= current_member.name %>)
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 
