@@ -10,7 +10,7 @@ default:
     force_confirmation: true
     confirmation_text: >
       Mir ist bewusst, dass diese Mitgliederkarte ein unabhängiges Projekt ist und meine
-      eingegeben Daten nicht im diavelforum.de sondern in einem eigenständigen System
+      eingegeben Daten nicht im Forum, sondern in einem eigenständigen System
       gespeichert werden. Ich habe die <a href="/privacy">Hinweise zum Datenschutz</a> gelesen.
 
   vbulletin:
