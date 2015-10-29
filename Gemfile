@@ -3,14 +3,11 @@ source 'https://rubygems.org'
 gem 'rails',        '~> 3.2.13'
 gem 'rails-i18n',   '~> 0.7.3'
 gem 'bcrypt-ruby',  '~> 3.0.1'
-gem 'pg',           '~> 0.15.1'
 gem 'jquery-rails', '~> 2.2.1'
 gem 'geocoder',     '~> 1.1.8'
 gem 'simple_form',  '~> 2.1.0'
-
-gem 'thin'
-gem 'newrelic_rpm'
-
+gem 'json',         '~> 1.8'
+gem 'pg',           '~> 0.18'
 
 group :assets do
   gem 'sass-rails',              '~> 3.2.3'
