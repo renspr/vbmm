@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
+ruby '2.2.3'
 
 gem 'rails',        '~> 3.2.13'
-gem 'rails-i18n',   '~> 0.7.3'
+gem 'rails-i18n',   '= 0.7.3'
 gem 'bcrypt-ruby',  '~> 3.0.1'
 gem 'jquery-rails', '~> 2.2.1'
 gem 'geocoder',     '~> 1.1.8'
