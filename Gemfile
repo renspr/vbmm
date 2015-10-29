@@ -9,6 +9,7 @@ gem 'geocoder',     '~> 1.1.8'
 gem 'simple_form',  '~> 2.1.0'
 gem 'json',         '~> 1.8'
 gem 'pg',           '~> 0.18'
+gem 'test-unit',    '~> 3.0' # required for rails c ???
 
 group :assets do
   gem 'sass-rails',              '~> 3.2.3'
