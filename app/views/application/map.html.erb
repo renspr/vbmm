@@ -4,7 +4,7 @@
 
   <script type="text/javascript">
     jQuery(function($) {
-      var members    = JSON.parse('<%= raw @members.to_json %>');
+      var members    = <%= raw @members.to_json %>;
       var mapOptions = {
         zoom: <%= Setting['map.default_zoom'] -%>,
         center: new google.maps.LatLng(<%= Setting['map.default_lat'] -%>, <%= Setting['map.default_lng'] -%>),
